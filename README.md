@@ -12,7 +12,12 @@ _Page display object value when user clicks on a 'place'_
 
 
 ## SPEC
-
+| Spec                                                             | Input                                              | Output                          |
+|------------------------------------------------------------------|----------------------------------------------------|---------------------------------|
+| create a function constructor that creates place objects         | new Place("california", 2004,"kind of smoggy") etc | Place{location:"california" etc |
+| create a function constructor that holds multiple places         | new PlaceHolder();                                 | PlaceHolder{places:[]}          |
+| add a prototype to the placeholder constructor to add new Places | placeHolder.AddPlace(place);                       | PlaceHolder{places:[place]}     |
+| return all values from PlaceHolder                               | placeHolder.places                                 | [place]                         |
 
 ## Setup/Installation Requirements
 
