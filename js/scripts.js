@@ -6,6 +6,10 @@ function Place(city, country, landmarks, year, notes){
   this.year = year,
   this.notes = notes
 }
+
+function PlaceHolder(){
+  this.places = [];
+}
 //UI Logic
 $(document).ready(function(){
 
