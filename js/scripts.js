@@ -61,7 +61,35 @@ $(document).ready(function(){
 //ui logic
   var places = initializeProgram();
   places.forEach(function(place){
-    console.log(place)
-  });
+    var id = place.city.split(' ').join('').toLowerCase();
+    $("#places").append("<li id='"+ id +"'>"+ place.city+"</li>")
+    $('#'+ id).append(function(){
+      $('#' + id).append("<ul class='visibility hide'>"
+      +"<li>" + place.country + "</li>"
+      + "<li>" + place.year + "</li>"
+      + "<li> Landmarks" 
+      +  "<ul class='landmarks'>"
+          
+      +  "</ul>"
+      + "</li>"
+      + "<li> Notes"
+      +  "<ul class='notes'>"
 
+      +  "</ul>"
+      + "</li>"
+      + "</ul>")
+    });
+    place.landmarks.forEach(function(landmark){
+      $("#" + id + " " + ".landmarks").append("<li>" + landmark + "</li>")
+    })
+    place.notes.forEach(function(note){
+      $("#" + id + " " + ".notes").append("<li>" + note + "</li>")
+    })
+    
+    $("#"+ id).click(function(){
+      $("#"+ id +" " + ".visibility").toggleClass("hide");  
+    });
+    
+  });
+ 
 })
