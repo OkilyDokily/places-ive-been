@@ -1,4 +1,4 @@
-//Business logic
+//business logic
 function Place(city, country, landmarks, year, notes){
   this.city = city,
   this.country = country,
@@ -10,8 +10,11 @@ function Place(city, country, landmarks, year, notes){
 function PlaceHolder(){
   this.places = [];
 }
-//UI Logic
-$(document).ready(function(){
 
+$(document).ready(function(){
+//business logic
+PlaceHolder.prototype.AddPlace = function (place){
+  this.places.push(place);
+};
 
 })
