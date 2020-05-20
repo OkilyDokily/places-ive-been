@@ -13,7 +13,6 @@ Place.prototype.AddNote = function (string){
   this.notes.push(string);
 }
 
-var placeHolder = new PlaceHolder();
 
   
 $(document).ready(function(){
