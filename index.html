@@ -13,6 +13,31 @@
       Places I've been
     </div>
     <div class="row">
+      <form id="addplace">
+        <div class="form-group">
+          <label for="">City</label>
+          <input class='form-control' id="city" type="text">
+        </div>
+        <div class="form-group">
+          <label for="">Country</label>
+          <input class="form-control" id="country" type="text">
+        </div>
+        <div class="form-group">
+          <label for="">Year</label>
+          <input class="form-control" id="year" type="number">
+        </div>
+        <div class="form-group">
+          <label for="">Landmarks</label>
+          <input type="text" id="landmarks" class="form-control" placeholder="Enter Landmarks separated by a comma">
+        </div>
+        <div class="form-group">
+          <label for="">Notes</label>
+          <textarea class="form-control" id="notes" name="" id="" cols="30" rows="10" placeholder="Enter Notes separated by a slash '/'"></textarea>
+        </div>
+        <button class="btn">Add Place</button>
+      </form>
+    </div>
+    <div class="row">
       <ul id="places">
 
       </ul>
