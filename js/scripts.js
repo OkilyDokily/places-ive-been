@@ -12,9 +12,20 @@ Place.prototype.AddLandmark = function (string){
 Place.prototype.AddNote = function (string){
   this.notes.push(string);
 }
+function buildObject(city, country, year, landmarks,notes){
+    var place = new Place(city,country,year);
+    landmarks.forEach(function(landmark){
+      place.AddLandmark(landmark);
+    });
 
-
-  
+    notes.forEach(function(note){
+      place.AddNote(note);
+    })
+    return place
+}
+    
+ 
+    
 $(document).ready(function(){
 //ui logic
 
@@ -27,14 +38,7 @@ $(document).ready(function(){
     var landmarks = $("#landmarks").val().split(",");
     var notes = $("#notes").val().split("/");
 
-    var place = new Place(city,country,year);
-    landmarks.forEach(function(landmark){
-      place.AddLandmark(landmark);
-    });
-    notes.forEach(function(note){
-      place.AddNote(note);
-    })
-    
+    var place = buildObject(city,country,year,landmarks,notes);
     var id = place.city.split(' ').join('').toLowerCase();
     $("#places").append("<li id='"+ id +"'>"+ place.city+"</li>");
    
